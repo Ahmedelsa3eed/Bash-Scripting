@@ -1,5 +1,5 @@
 # Table of content
-- [Bash Scripting Inro](#ref Bash-Scripting-Inro)
+- [Bash Scripting Inro](https://github.com/Ahmedelsa3eed/Bash-Scripting#bash-scipting-intro-bash-scripting-inro)
 
 
 # Bash Scipting Intro #{Bash-Scripting-Inro}
