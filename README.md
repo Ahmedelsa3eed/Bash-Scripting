@@ -1,6 +1,6 @@
 # Table of content
 - [Bash Scripting Inro](https://github.com/Ahmedelsa3eed/Bash-Scripting#bash-scipting-intro-bash-scripting-inro)
-
+- [Variables](https://github.com/Ahmedelsa3eed/Bash-Scripting/edit/main/README.md#variables)
 
 # Bash Scipting Intro #{Bash-Scripting-Inro}
 
@@ -32,3 +32,17 @@
 
 - ``./hello.sh``
 
+# Variables
+## System variables
+- Predefined by your OS
+- Defined in Capital case
+- ``echo $BASH`` 
+    - This will give the bash name   
+- ``echo $BASH_VERSION`` bash version
+- ``echo $HOME`` home directory
+- ``echo $pwd`` present working directory
+
+## User deined variables
+- to define a new variable ``name=Ahmed``
+- to use the variable ``echo my name is $name``
+- **Note** The variable name should not start with a number
