@@ -83,3 +83,18 @@
     EOF
     
 - append this code to a new script named ``script.py``
+
+# time command
+- The time command is used to determine how long a given command takes to run.
+
+        $time sleep 3
+    
+ - ouput:
+        
+        real    0m3.015s
+        user    0m0.009s
+        sys     0m0.001s 
+
+- **real** or total or elapsed (wall clock time) is the time from start to finish of the call.
+- **user** - amount of CPU time spent in user mode.
+- **system** or **sys** - amount of CPU time spent in kernel mode.
