@@ -100,3 +100,23 @@
 - **real** or total or elapsed (wall clock time) is the time from start to finish of the call.
 - **user** - amount of CPU time spent in user mode.
 - **system** or **sys** - amount of CPU time spent in kernel mode.
+
+# timeout command
+- It is a command-line utility that runs a specified command and terminates it if it is still running after a given period of time.
+- The command options must be provided before the arguments.
+- If no signal is given, ``timeout`` sends the ``SIGTERM`` signal to the managed command when the  
+  time limit is reached. You can specify which signal to send using the ``-s`` (``--signal``) option.
+- examples
+    - Terminate a command after five seconds:
+    
+               timeout 5 ping 8.8.8.8
+               
+    - Terminate a command after five minutes:
+    
+               timeout 5m ping 8.8.8.8
+               
+    - send ``SIGKILL`` to the ``ping`` command after one minute
+
+               sudo timeout -s SIGKILL ping 8.8.8.8
+               
+            
