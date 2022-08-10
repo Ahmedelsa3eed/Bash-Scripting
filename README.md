@@ -46,3 +46,40 @@
 - to define a new variable ``name=Ahmed``
 - to use the variable ``echo my name is $name``
 - **Note** The variable name should not start with a number
+
+# Cat command in Linux with examples
+- It reads data from the file and gives their content as output.
+
+## To view a single file
+    
+    $cat filename
+    
+ ## To view contents of a file preceding with line numbers
+ 
+    $cat -n filename
+    
+ ## Create a file
+ 
+    $ cat > newfile
+
+ - It will create a file named newfile
+ 
+ ## Copy the contents of one file to another file
+ 
+    $cat [source-ffilename] > [destination-filename]
+
+## Append the contents of one file to the end of another file
+
+    $cat file1 >> file2
+    
+## Pass multi-line string to a file in Bash
+    
+    cat << EOF >> script.py
+    from math import factorial
+    sum = 0
+    for i in range(10000):
+        sum += factorial(i)
+    print(sum)
+    EOF
+    
+- append this string to a new script named ``script.py``
