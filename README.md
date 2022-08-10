@@ -2,7 +2,7 @@
 - [Bash Scipting Intro](#Bash-Scipting-Intro)
 - [Variables](#Variables)
 - [Cat command in Linux with examples](#Cat-command-in-Linux-with-examples)
-- [time command](#time command)
+- [time command](#time-command)
 
 # Bash Scipting Intro
 
