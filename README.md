@@ -1,6 +1,8 @@
 # Table of content
 - [Bash Scipting Intro](#Bash-Scipting-Intro)
-- [Variables](https://github.com/Ahmedelsa3eed/Bash-Scripting/edit/main/README.md#variables)
+- [Variables](#Variables)
+- [Cat command in Linux with examples](#Cat-command-in-Linux-with-examples)
+- [time command](#time command)
 
 # Bash Scipting Intro
 
