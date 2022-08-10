@@ -60,7 +60,7 @@
     
  ## Create a file
  
-    $ cat > newfile
+    $cat > newfile
 
  - It will create a file named newfile
  
@@ -82,4 +82,4 @@
     print(sum)
     EOF
     
-- append this string to a new script named ``script.py``
+- append this code to a new script named ``script.py``
