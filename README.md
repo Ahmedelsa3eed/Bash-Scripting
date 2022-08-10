@@ -2,7 +2,7 @@
 - [Bash Scripting Inro](https://github.com/Ahmedelsa3eed/Bash-Scripting#bash-scipting-intro-bash-scripting-inro)
 - [Variables](https://github.com/Ahmedelsa3eed/Bash-Scripting/edit/main/README.md#variables)
 
-# Bash Scipting Intro #{Bash-Scripting-Inro}
+# Bash Scipting Intro 
 
 ## What bash means?
 - bash stands for bourne-again shell
