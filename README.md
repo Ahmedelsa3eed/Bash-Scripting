@@ -5,6 +5,8 @@
 - [time command](#time-command)
 - [df command](#df-command)
 - [tee command](#tee-command)
+- [heredoc](#heredoc)
+- [sed command](#sed-command)
 
 # Bash Scipting Intro
 
@@ -176,11 +178,11 @@
         The current working directory is: $PWD
         You are logged in as: $(whoami)
         EOF
-output:
+    - output:
 
-        The current working directory is: /home/linuxize
-        You are logged in as: linuxize
-        
+            The current working directory is: /home/linuxize
+            You are logged in as: linuxize
+
 Let’s see what will happen if we enclose the delimiter in single or double quotes:
 
         cat <<- "EOF"
@@ -207,10 +209,10 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
         Hello
         World
         EOF
-output
+    - output
 
-        Heeeo
-        Wored
+            Heeeo
+            Wored
 
 - To write the piped data to a file:
 
