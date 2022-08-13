@@ -58,25 +58,25 @@
 
 ## To view a single file
     
-    $cat filename
+    cat filename
     
  ## To view contents of a file preceding with line numbers
  
-    $cat -n filename
+    cat -n filename
     
  ## Create a file
  
-    $cat > newfile
+    cat > newfile
 
  - It will create a file named newfile
  
  ## Copy the contents of one file to another file
  
-    $cat [source-ffilename] > [destination-filename]
+    cat [source-ffilename] > [destination-filename]
 
 ## Append the contents of one file to the end of another file
 
-    $cat file1 >> file2
+    cat file1 >> file2
     
 ## Pass multi-line string to a file in Bash
     
