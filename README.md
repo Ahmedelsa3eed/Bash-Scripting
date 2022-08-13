@@ -3,6 +3,8 @@
 - [Variables](#Variables)
 - [Cat command in Linux with examples](#Cat-command-in-Linux-with-examples)
 - [time command](#time-command)
+- [df command](#df-command)
+- [tee command](#tee-command)
 
 # Bash Scipting Intro
 
@@ -120,3 +122,38 @@
                sudo timeout -s SIGKILL ping 8.8.8.8
                
             
+# df command
+- You can use the ``df`` command to get a detailed report on the system’s disk space usage.
+- For example, to show the space available on the file system mounted to the system root directory (``/``),  
+  you can use either ``df /dev/nvme0n1p3`` or ``df /``
+- To display information about disk drives in human-readable format (kilobytes, megabytes, gigabytes and so on), invoke the ``df`` command with the ``-h`` option:
+
+        df -h
+       
+- The ``-T`` option tells ``df`` to display file system types:
+
+        df -t
+        
+- When invoked with the ``-i`` option, the ``df`` command prints information about the filesystem inodes usage.
+- The command below will show information about the inodes on the file system mounted to system root directory ``/`` in human-readable format:
+
+        df -ih /
+        
+# tee command
+- The ``tee`` command reads from the standard input and writes to both standard output and one or more files at the same time.
+- The most basic usage of the ``tee`` command is to display the standard output (``stdout``) of a program and write it in a file.
+- In the following example, we are using the ``df`` command to get information about the amount of available disk space on the file system.  
+  The output is piped to the ``tee`` command, which displays the output to the terminal and writes the same information to the file ``disk_usage.txt``
+  
+        df -h | tee disk_usage.txt
+        
+- You can view the content of the ``disk_usage.txt`` file using the [cat command](#Cat-command-in-Linux-with-examples).      
+- By default, the ``tee`` command will overwrite the specified file. Use the ``-a`` (``--append``) option to append the output to the file :
+
+        command | tee -a file.out
+        
+- If you don’t want ``tee`` to write to the standard output, you can redirect it to ``/dev/null``:
+
+        command | tee file.out >/dev/null
+        
+        
