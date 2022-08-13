@@ -157,3 +157,81 @@
         command | tee file.out >/dev/null
         
         
+# Heredoc
+- Here document (Heredoc) is a type of redirection that allows you to pass multiple lines of input to a command.
+        
+        [COMMAND] <<[-] 'DELIMITER'
+            HERE-DOCUMENT
+        DELIMITER
+
+- The first line starts with an optional command followed by the special redirection operator ``<<`` and the delimiting identifier.
+    - You can use any string as a delimiting identifier, the most commonly used are EOF or END.
+    - If the delimiting identifier is unquoted, the shell will substitute all variables, commands and special characters before passing the here-document lines to the       command.
+    - Appending a minus sign to the redirection operator ``<<-``, will cause all leading tab characters to be ignored. This allows you to use indentation when writing       here-documents in shell scripts. Leading whitespace characters are not allowed, only tab.
+- The here-document block can contain strings, variables, commands and any other type of input.    
+- The last line ends with the delimiting identifier. White space in front of the delimiter is not allowed.
+- Examples:
+
+        cat << EOF
+        The current working directory is: $PWD
+        You are logged in as: $(whoami)
+        EOF
+output:
+
+        The current working directory is: /home/linuxize
+        You are logged in as: linuxize
+        
+Let’s see what will happen if we enclose the delimiter in single or double quotes:
+
+        cat <<- "EOF"
+        The current working directory is: $PWD
+        You are logged in as: $(whoami)
+        EOF
+
+You can notice that when the delimiter is quoted no parameter expansion and command substitution is done by the shell.
+
+        The current working directory is: $PWD
+        You are logged in as: $(whoami)
+
+- Instead of displaying the output on the screen you can redirect it to a file using the ``>``, ``>>`` operators.
+        
+        cat << EOF > file.txt
+        The current working directory is: $PWD
+        You are logged in as: $(whoami)
+        EOF
+
+- When using ``>`` the file will be **overwritten**, while the ``>>`` will **append** the output to the file.
+- The heredoc input can also be piped. In the following example the [sed](#sed-command) command will replace all instances of the ``l`` character with ``e``:
+    
+        cat <<'EOF' |  sed 's/l/e/g'
+        Hello
+        World
+        EOF
+output
+
+        Heeeo
+        Wored
+
+- To write the piped data to a file:
+
+        cat <<'EOF' |  sed 's/l/e/g' > file.txt
+        Hello
+        World
+        EOF
+
+
+# sed command
+- ``sed`` is a stream editor.
+- It can perform basic text manipulation on files and input streams such as pipelines.
+- With ``sed``, you can search, find and replace, insert, and delete words and lines.
+
+        sed -i 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE
+
+- ``-i`` - By default, ``sed`` writes its output to the standard output. This option tells ``sed`` to edit files in place. If an extension is supplied (ex -i.bak), a backup of the original file is created.
+- ``s`` - The substitute command, probably the most used command in ``sed``.
+- ``/ / /`` - Delimiter character. It can be any character but usually the slash (``/``) character is used.
+- ``SEARCH_REGEX`` - Normal string or a regular expression to search for.
+- ``REPLACEMENT`` - The replacement string.
+- ``g`` - Global replacement flag. By default, ``sed`` reads the file line by line and changes only the first occurrence of the ``SEARCH_REGEX`` on a line. When the     replacement flag is provided, all occurrences are replaced.
+-  ``INPUTFILE`` - The name of the file on which you want to run the command.
+
