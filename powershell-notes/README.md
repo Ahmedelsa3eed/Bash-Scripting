@@ -1,5 +1,5 @@
 # Table of content
-- [Check if a File Exists](Check-if-a-File-Exists)
+- [Check if a File Exists](#Check-if-a-File-Exists)
 
 # Check if a File Exists
 - Using ``Test-Path``, It determines whether the complete path exists
