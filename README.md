@@ -7,6 +7,7 @@
 - [tee command](#tee-command)
 - [heredoc](#heredoc)
 - [sed command](#sed-command)
+- [env command](#env-command)
 
 # Bash Scipting Intro
 
@@ -237,3 +238,13 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
 - ``g`` - Global replacement flag. By default, ``sed`` reads the file line by line and changes only the first occurrence of the ``SEARCH_REGEX`` on a line. When the     replacement flag is provided, all occurrences are replaced.
 -  ``INPUTFILE`` - The name of the file on which you want to run the command.
 
+# env command
+- It can print a list of the current environment variables.
+- It can run another program in a custom environment without modifying the current one.
+- If ``env`` is run without any options, it prints the variables of the current environment.
+  Otherwise, ``env`` sets each ``NAME`` to ``VALUE`` and executes ``COMMAND``.
+  
+ - Options:
+    - ``-i``, ``--ignore-environment``: Start with an empty environment.
+    - ``-0``, ``--null``: End each output line with a 0 (``null``) byte rather than a newline.
+    - ``-u``, ``--unset=NAME``: Remove variable NAME from the environment.
