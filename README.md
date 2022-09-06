@@ -8,6 +8,7 @@
 - [heredoc](#heredoc)
 - [sed command](#sed-command)
 - [env command](#env-command)
+- [SCP Command](#SCP-Command)
 
 # Bash Scipting Intro
 
@@ -248,3 +249,25 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
     - ``-i``, ``--ignore-environment``: Start with an empty environment.
     - ``-0``, ``--null``: End each output line with a 0 (``null``) byte rather than a newline.
     - ``-u``, ``--unset=NAME``: Remove variable NAME from the environment.
+
+# SCP Command
+- It allows you to securely copy files and directories between two locations.
+- Copy file or directory:
+    - From your local system to a remote system.
+    - From a remote system to your local system.
+    - Between two remote systems from your local system.
+- Syntax:
+    
+    scp [OPTION] [user@]SRC_HOST:]file1 [user@]DEST_HOST:]file2
+
+- Local files should be specified using an absolute or relative path, while remote file names should include a user and host specification.
+- you must have at least read permissions on the source file and write permission on the target system.
+- Examples:
+
+    scp file.txt remote_username@10.10.0.2:/remote/directory
+    
+- Pass your identity
+
+    scp -i ~/.ssh/private_key.pem ./file.txt remote_username@10.10.0.2:/home/remote_username
+    
+ 
