@@ -264,10 +264,10 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
 - you must have at least read permissions on the source file and write permission on the target system.
 - Examples:
 
-    scp file.txt remote_username@10.10.0.2:/remote/directory
+        scp file.txt remote_username@10.10.0.2:/remote/directory
     
 - Pass your identity
 
-    scp -i ~/.ssh/private_key.pem ./file.txt remote_username@10.10.0.2:/home/remote_username
+        scp -i ~/.ssh/private_key.pem ./file.txt remote_username@10.10.0.2:/home/remote_username
     
  
