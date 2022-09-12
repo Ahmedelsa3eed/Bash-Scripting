@@ -342,4 +342,5 @@ Example:
 To exclude a directory from the search, use the ``--exclude-dir`` option.
 
 Here is an example showing how to search for the string saeed in all files inside the /etc, excluding the /etc/pki directory:
+        
         grep -R --exclude-dir=pki saeed /etc
