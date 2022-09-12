@@ -1,15 +1,16 @@
 # Table of content
 - [Bash Scipting Intro](#Bash-Scipting-Intro)
 - [Variables](#Variables)
-- [Cat command in Linux with examples](#Cat-command-in-Linux-with-examples)
-- [time command](#time-command)
-- [df command](#df-command)
-- [tee command](#tee-command)
+- [Cat](#Cat-command-in-Linux-with-examples)
+- [time](#time-command)
+- [df](#df-command)
+- [tee](#tee-command)
 - [heredoc](#heredoc)
-- [sed command](#sed-command)
-- [env command](#env-command)
-- [SCP command](#SCP-command)
-- [Ip command](#Ip-command)
+- [sed](#sed-command)
+- [env](#env-command)
+- [SCP](#SCP-command)
+- [Ip](#Ip-command)
+- [grep](#grep-command)
 
 # Bash Scipting Intro
 
@@ -305,5 +306,40 @@ If you want to display only ``IPv4`` or ``IPv6`` ip addresses, use ``ip -4 addr`
 
         ip addr show dev eth0
 
+# grep command
+``grep`` is a powerful command-line tool that is used to search one or more input files for lines that match a regular expression and writes each matching line to standard output.
 
+## Exclude Words and Patterns
+To display only the lines that do not match a search pattern, use the ``-v`` ( or ``--invert-match``) option.
+        
+        grep -wv nologin /etc/passwd
 
+**NOTE**: The ``-w`` option tells grep to return only those lines where the specified string is a whole word (enclosed by non-word characters).
+
+To specify two or more search patterns, use the ``-e`` option:
+
+        grep -wv -e nologin -e bash /etc/passwd      
+Or      
+
+        grep -wv 'nologin\|bash' /etc/passwd
+        
+**NOTE**: At the basic regular expression where the meta-characters such as ``|`` lose their special meaning, you must use their backslashed versions.
+
+If you use the extended regular expression option ``-E``, then the operator ``|`` should not be escaped, as shown below:
+
+        grep -Ewv 'nologin|bash' /etc/passwd
+        
+Example:
+- The lines where the string ``games`` occur at the very beginning of a line are excluded:
+
+        grep -v "^games" file.txt
+        
+- To print out all running processes on your system except those running as user “root” you can filter the output of the ``ps`` command:
+
+        ps -ef | grep -wv root
+        
+## Exclude Directories and Files
+To exclude a directory from the search, use the ``--exclude-dir`` option.
+
+Here is an example showing how to search for the string saeed in all files inside the /etc, excluding the /etc/pki directory:
+        grep -R --exclude-dir=pki saeed /etc
