@@ -8,7 +8,8 @@
 - [heredoc](#heredoc)
 - [sed command](#sed-command)
 - [env command](#env-command)
-- [SCP Command](#SCP-Command)
+- [SCP command](#SCP-command)
+- [Ip command](#Ip-command)
 
 # Bash Scipting Intro
 
@@ -250,7 +251,7 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
     - ``-0``, ``--null``: End each output line with a 0 (``null``) byte rather than a newline.
     - ``-u``, ``--unset=NAME``: Remove variable NAME from the environment.
 
-# SCP Command
+# SCP command
 - It allows you to securely copy files and directories between two locations.
 - Copy file or directory:
     - From your local system to a remote system.
@@ -271,3 +272,38 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
         scp -i ~/.ssh/private_key.pem ./file.txt remote_username@10.10.0.2:/home/remote_username
     
  
+# Ip command
+- The ip command is a powerful tool for configuring network interfaces that any Linux system administrator should know.  
+- It is used to bring interfaces up or down, assign and remove addresses and routes, manage ARP cache, and much more.
+
+**NOTE**: The configurations set with the ip command are not persistent. After a system restart, all changes are lost
+
+**Syntax**:
+
+        ip [ OPTIONS ] OBJECT { COMMAND | help }
+        
+OBJECT is the object type that you want to manage:
+- ``link`` (``l``) - Display and modify network interfaces.
+- ``address`` (``a``) - Display and modify IP Addresses.
+- ``route`` (``r``) - Display and alter the routing table.
+- ``neigh`` (``n``) - Display and manipulate neighbor objects (ARP table).
+
+## Displaying and Modifying IP Addresses
+
+        ip addr [ COMMAND ] ADDRESS dev IFNAME
+        
+### Display information about all IP addresses
+
+        ip addr show
+or
+
+        ip addr
+        
+If you want to display only ``IPv4`` or ``IPv6`` ip addresses, use ``ip -4 addr`` or ``ip -6 addr``.
+
+### Display information about a single network interface
+
+        ip addr show dev eth0
+
+
+
