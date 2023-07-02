@@ -379,3 +379,7 @@ This will download the entire website on your local drive in a directory named t
 - show all databases
 
         show databases;
+
+- create a database user with the name ``user`` and the password ``password`` on our localhost server
+
+        create user 'user'@'127.0.0.1' identified by 'password';
