@@ -14,6 +14,7 @@
     - [grep](#grep)
     - [wget](#wget)
     - [cp](#cp)
+    - [locate](#locate)
 - [mysql](#mysql)
 
 # Bash Scipting Intro
@@ -362,6 +363,12 @@ This will download the entire website on your local drive in a directory named t
 - copy the file under a different name
 
       cp file.txt new_file.txt
+
+# locate
+find the files by name
+- Search a file with specific name
+
+        locate sample.txt 
 
 # mysql
 - start mysql service
