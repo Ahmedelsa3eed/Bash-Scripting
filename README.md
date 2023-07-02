@@ -98,7 +98,7 @@
     
 - append this code to a new script named ``script.py``
 
-# time command
+# time
 - The time command is used to determine how long a given command takes to run.
 
         $time sleep 3
@@ -113,7 +113,7 @@
 - **user** - amount of CPU time spent in user mode.
 - **system** or **sys** - amount of CPU time spent in kernel mode.
 
-# timeout command
+# timeout
 - It is a command-line utility that runs a specified command and terminates it if it is still running after a given period of time.
 - The command options must be provided before the arguments.
 - If no signal is given, ``timeout`` sends the ``SIGTERM`` signal to the managed command when the  
@@ -132,7 +132,7 @@
                sudo timeout -s SIGKILL ping 8.8.8.8
                
             
-# df command
+# df
 - You can use the ``df`` command to get a detailed report on the system’s disk space usage.
 - For example, to show the space available on the file system mounted to the system root directory (``/``),  
   you can use either ``df /dev/nvme0n1p3`` or ``df /``
@@ -149,7 +149,7 @@
 
         df -ih /
         
-# tee command
+# tee
 - The ``tee`` command reads from the standard input and writes to both standard output and one or more files at the same time.
 - The most basic usage of the ``tee`` command is to display the standard output (``stdout``) of a program and write it in a file.
 - In the following example, we are using the ``df`` command to get information about the amount of available disk space on the file system.  
@@ -230,7 +230,7 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
         EOF
 
 
-# sed command
+# sed
 - ``sed`` is a stream editor.
 - It can perform basic text manipulation on files and input streams such as pipelines.
 - With ``sed``, you can search, find and replace, insert, and delete words and lines.
@@ -245,7 +245,7 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
 - ``g`` - Global replacement flag. By default, ``sed`` reads the file line by line and changes only the first occurrence of the ``SEARCH_REGEX`` on a line. When the     replacement flag is provided, all occurrences are replaced.
 -  ``INPUTFILE`` - The name of the file on which you want to run the command.
 
-# env command
+# env
 - It can print a list of the current environment variables.
 - It can run another program in a custom environment without modifying the current one.
 - If ``env`` is run without any options, it prints the variables of the current environment.
@@ -256,7 +256,7 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
     - ``-0``, ``--null``: End each output line with a 0 (``null``) byte rather than a newline.
     - ``-u``, ``--unset=NAME``: Remove variable NAME from the environment.
 
-# SCP command
+# SCP
 - It allows you to securely copy files and directories between two locations.
 - Copy file or directory:
     - From your local system to a remote system.
@@ -277,7 +277,7 @@ You can notice that when the delimiter is quoted no parameter expansion and comm
         scp -i ~/.ssh/private_key.pem ./file.txt remote_username@10.10.0.2:/home/remote_username
     
  
-# Ip command
+# Ip
 - The ip command is a powerful tool for configuring network interfaces that any Linux system administrator should know.  
 - It is used to bring interfaces up or down, assign and remove addresses and routes, manage ARP cache, and much more.
 
@@ -310,7 +310,7 @@ If you want to display only ``IPv4`` or ``IPv6`` ip addresses, use ``ip -4 addr`
 
         ip addr show dev eth0
 
-# grep command
+# grep
 ``grep`` is a powerful command-line tool that is used to search one or more input files for lines that match a regular expression and writes each matching line to standard output.
 
 ## Exclude Words and Patterns
@@ -350,7 +350,7 @@ Here is an example showing how to search for the string saeed in all files insid
         grep -R --exclude-dir=pki saeed /etc
 
 
-# wget command
+# wget
 ``wget`` and the ``-m`` flag will download and mirror an entire web site that is referenced. The syntax would be as follows, replacing the URL as desired:
 
         wget -m [url]
