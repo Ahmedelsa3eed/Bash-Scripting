@@ -11,6 +11,7 @@
 - [SCP](#SCP-command)
 - [Ip](#Ip-command)
 - [grep](#grep-command)
+- [wget](#wget-command)
 
 # Bash Scipting Intro
 
@@ -344,3 +345,11 @@ To exclude a directory from the search, use the ``--exclude-dir`` option.
 Here is an example showing how to search for the string saeed in all files inside the /etc, excluding the /etc/pki directory:
         
         grep -R --exclude-dir=pki saeed /etc
+
+
+# wget command
+``wget`` and the ``-m`` flag will download and mirror an entire web site that is referenced. The syntax would be as follows, replacing the URL as desired:
+
+        wget -m [url]
+
+This will download the entire website on your local drive in a directory named the websites URL.
