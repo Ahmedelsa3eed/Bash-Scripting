@@ -15,6 +15,7 @@
     - [wget](#wget)
     - [cp](#cp)
     - [locate](#locate)
+    - [systemctl](#systemctl)
 - [mysql](#mysql)
 
 # Bash Scipting Intro
@@ -369,6 +370,17 @@ find the files by name
 - Search a file with specific name
 
         locate sample.txt 
+
+# systemctl
+- start and stop any service using systemctl
+
+        sudo systemctl start mysql.service
+        sudo systemctl stop mysql.service
+
+- restart of reload any service
+
+        sudo systemctl reload mysql.service
+        sudo systemctl restart mysql.service
 
 # mysql
 - start mysql service
