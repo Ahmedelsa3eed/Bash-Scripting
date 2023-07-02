@@ -383,3 +383,7 @@ This will download the entire website on your local drive in a directory named t
 - create a database user with the name ``user`` and the password ``password`` on our localhost server
 
         create user 'user'@'127.0.0.1' identified by 'password';
+
+- grant the ``user`` privilege all over the ``dvwa`` database.
+
+        grant all privileges on dvwa.* to 'user'@'127.0.0.1' identified by 'password';
