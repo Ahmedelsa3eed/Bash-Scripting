@@ -14,6 +14,7 @@
     - [grep](#grep)
     - [wget](#wget)
     - [cp](#cp)
+- [mysql](#mysql)
 
 # Bash Scipting Intro
 
@@ -361,3 +362,20 @@ This will download the entire website on your local drive in a directory named t
 - copy the file under a different name
 
       cp file.txt new_file.txt
+
+# mysql
+- start mysql service
+
+        service mysql start
+
+- check the status of your mysql service
+  
+        service mysql status
+
+- create a new database
+
+        create database <DB Name>;
+
+- show all databases
+
+        show databases;
