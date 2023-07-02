@@ -1,17 +1,19 @@
 # Table of content
 - [Bash Scipting Intro](#Bash-Scipting-Intro)
 - [Variables](#Variables)
-- [Cat](#Cat-command-in-Linux-with-examples)
-- [time](#time-command)
-- [df](#df-command)
-- [tee](#tee-command)
-- [heredoc](#heredoc)
-- [sed](#sed-command)
-- [env](#env-command)
-- [SCP](#SCP-command)
-- [Ip](#Ip-command)
-- [grep](#grep-command)
-- [wget](#wget-command)
+- [Commands](#Commands)
+    - [Cat](#Cat-command-in-Linux-with-examples)
+    - [time](#time)
+    - [df](#df)
+    - [tee](#tee)
+    - [heredoc](#heredoc)
+    - [sed](#sed)
+    - [env](#env)
+    - [SCP](#SCP)
+    - [Ip](#Ip)
+    - [grep](#grep)
+    - [wget](#wget)
+    - [cp](#cp)
 
 # Bash Scipting Intro
 
@@ -353,3 +355,9 @@ Here is an example showing how to search for the string saeed in all files insid
         wget -m [url]
 
 This will download the entire website on your local drive in a directory named the websites URL.
+
+# cp
+``cp`` for copying files and directories
+- copy the file under a different name
+
+      cp file.txt new_file.txt
