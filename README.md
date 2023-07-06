@@ -16,7 +16,9 @@
     - [cp](#cp)
     - [locate](#locate)
     - [systemctl](#systemctl)
+    - [scp[#scp)
 - [mysql](#mysql)
+- [ssh](#ssh)
 
 # Bash Scipting Intro
 
@@ -382,6 +384,20 @@ find the files by name
         sudo systemctl reload mysql.service
         sudo systemctl restart mysql.service
 
+# scp
+SCP (secure copy) is a command-line utility that allows you to securely copy files and directories between two locations.
+With scp, you can copy a file or directory:
+
+- From your local system to a remote system.
+- From a remote system to your local system.
+- Between two remote systems from your local system.
+
+## Copy Files and Directories Between Two Systems
+
+        scp file.txt remote_username@10.10.0.2:/remote/directory
+Where ``file.txt`` is the name of the file we want to copy, ``remote_username`` is the user on the remote server, ``10.10.0.2`` is the server IP address. The ``/remote/directory`` is the path to the directory you want to copy the file to. If you don’t specify a remote directory, the file will be copied to the remote user home directory.
+You will be prompted to enter the user password, and the transfer process will start.
+
 # mysql
 - start mysql service
 
@@ -406,3 +422,25 @@ find the files by name
 - grant the ``user`` privilege all over the ``dvwa`` database.
 
         grant all privileges on dvwa.* to 'user'@'127.0.0.1' identified by 'password';
+
+# ssh
+The following requirements must be met to be able to login into a remote machine via SSH:
+An SSH server must be running on the remote machine.
+The SSH port must be open in the remote machine firewall.
+You must know the username and the password of the remote account. The account needs to have proper privileges for remote login.
+
+        ssh [OPTIONS] [USER@]:HOST
+        ssh username@hostname
+
+## generate an SSH key pair,
+- use the following command:
+
+        ssh-keygen
+  By default, your private and public keys are saved in your ``~/.ssh/id_rsa`` and ``~/.ssh/id_rsa.pub`` files, respectively.
+
+## Sharing keys
+- share your public key with the remote machines
+- Use the ``ssh-copy-id`` command to copy your public key over to the destination system.
+
+        ssh-copy-id our_username@other_machine
+This will take our public key from its default location and transfer it to the other machine
