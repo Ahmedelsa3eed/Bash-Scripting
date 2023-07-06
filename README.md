@@ -16,7 +16,7 @@
     - [cp](#cp)
     - [locate](#locate)
     - [systemctl](#systemctl)
-    - [scp[#scp)
+    - [scp](#scp)
 - [mysql](#mysql)
 - [ssh](#ssh)
 
