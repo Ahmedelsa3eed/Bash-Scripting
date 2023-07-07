@@ -539,7 +539,7 @@ To handle filenames that begin with a dash in Linux, you can use one of the foll
 
         $ rm /path/to/-samplefile.txt
   
-Use the ``./`` notation for specifying your current directory as shown in this example:
+- Use the ``./`` notation for specifying your current directory as shown in this example:
 
         $ rm ./-samplefile.txt
 
