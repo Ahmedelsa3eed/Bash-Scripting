@@ -17,6 +17,7 @@
     - [locate](#locate)
     - [systemctl](#systemctl)
     - [scp](#scp)
+- [Text manipulation tools](#text-commands)
 - [mysql](#mysql)
 - [ssh](#ssh)
 
@@ -397,6 +398,85 @@ With scp, you can copy a file or directory:
         scp file.txt remote_username@10.10.0.2:/remote/directory
 Where ``file.txt`` is the name of the file we want to copy, ``remote_username`` is the user on the remote server, ``10.10.0.2`` is the server IP address. The ``/remote/directory`` is the path to the directory you want to copy the file to. If you don’t specify a remote directory, the file will be copied to the remote user home directory.
 You will be prompted to enter the user password, and the transfer process will start.
+
+# text-commands
+- Sort: sort a file (assuming the contents are ASCII)
+
+        cat test.txt | sort
+  
+- uniq: filters out the repeated lines in a file
+
+        cat test.txt | uniq
+  
+- tr: translating or deleting characters
+replace all characters from the standard input (linuxize), by mapping the characters from the first set with the matching ones from the second set.
+        
+        echo 'linuxize' | tr 'lin' 'red'
+echo 'linuxize' | tr 'lin' 'red'
+
+        reduxeze
+The ``-d`` (``--delete``) option tells tr to delete characters specified in SET1. When deleting characters without squeezing, specify only one set.
+The command below will remove ``l``, ``i`` and ``z`` characters:
+
+        echo 'Linuxize' | tr -d 'liz'
+
+The ``L`` character is not deleted because the input includes an uppercase L while the l character in the SET is lowercase.
+
+        Lnuxe
+
+The ``-s`` (``--squeeze-repeats``) option replaces a sequence of repeated occurrences with the character set in the last SET.
+
+In the following example, ``tr`` removes the repeated space characters:
+
+        echo "GNU     \    Linux" | tr -s ' '
+        GNU \ Linux
+
+When SET2 is used the sequence of the character specified in SET1 is replaced with SET2.
+
+        echo "GNU     \    Linux" | tr -s ' ' '_'
+        GNU_\_Linux
+
+- Cut:
+    - Print selected parts of lines from each FILE to standard output.
+    - cut parts of a line by byte position, character, and field
+examples:
+    - print the first three bytes of each line (``-b``, ``--bytes=LIST`` select only these bytes)
+
+          cut -b 1,2,3 filename
+
+    - print the first word and the third word of each line (``-d``, ``--delimiter=DELIM`` use DELIM instead of TAB for field delimiter)
+      ``f 1,3``: Specifies the fields (columns) to be extracted.
+
+          cut -d “ ” -f 1,3 filename
+      
+- Awk: pattern scanning and processing language
+    - Executing awk programs
+      An awk program can be run in several ways. If the program is short and simple, it can be passed directly to the ``awk`` interpreter on the command-line:
+
+          awk 'program' input-file...
+      
+      If the program is large and complex, it is best to put it in a file and use the ``-f`` option to pass the file to the ``awk`` command:
+
+          awk -f program-file input-file...
+
+      In the examples below, we will use a file named “teams.txt” that looks like the one below:
+
+
+          Bucks Milwaukee    60 22 0.732 
+          Raptors Toronto    58 24 0.707 
+          76ers Philadelphia 51 31 0.622
+          Celtics Boston     49 33 0.598
+          Pacers Indiana     48 34 0.585
+
+      When the rule has no pattern, each input record is matched. Here is an example of a rule containing only an action:
+
+          awk '{ print $3 }' teams.txt
+      
+    - Regular expression patterns
+      A regular expression or regex is a pattern that matches a set of strings. Awk regular expression patterns are enclosed in slashes (``//``):
+
+          awk '/0.5/ { print $1 }' teams.txt
+          awk '/^[0-9][0-9]/ { print $1 }' teams.txt
 
 # mysql
 - start mysql service
