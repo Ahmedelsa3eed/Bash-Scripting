@@ -20,6 +20,7 @@
 - [Text manipulation tools](#text-commands)
 - [mysql](#mysql)
 - [ssh](#ssh)
+- [notes](#notes)
 
 # Bash Scipting Intro
 
@@ -524,3 +525,22 @@ You must know the username and the password of the remote account. The account n
 
         ssh-copy-id our_username@other_machine
 This will take our public key from its default location and transfer it to the other machine
+
+# notes
+---
+**Handling Dashed Filenames**
+
+To handle filenames that begin with a dash in Linux, you can use one of the following methods:
+- Use the ``—`` option: This will tell the shell that the following arguments are not options. For example,
+
+        $ rm — -samplefile.txt
+  
+- Utilize the full path to the file. Here is an example:
+
+        $ rm /path/to/-samplefile.txt
+  
+Use the ``./`` notation for specifying your current directory as shown in this example:
+
+        $ rm ./-samplefile.txt
+
+---
