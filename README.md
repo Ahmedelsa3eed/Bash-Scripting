@@ -17,6 +17,7 @@
     - [locate](#locate)
     - [systemctl](#systemctl)
     - [scp](#scp)
+    - [du](#du)
 - [Text manipulation tools](#text-commands)
 - [mysql](#mysql)
 - [ssh](#ssh)
@@ -400,6 +401,17 @@ With scp, you can copy a file or directory:
 Where ``file.txt`` is the name of the file we want to copy, ``remote_username`` is the user on the remote server, ``10.10.0.2`` is the server IP address. The ``/remote/directory`` is the path to the directory you want to copy the file to. If you don’t specify a remote directory, the file will be copied to the remote user home directory.
 You will be prompted to enter the user password, and the transfer process will start.
 
+# du
+The ``du`` command, short for “disk usage” reports the estimated amount of disk space used by given files or directories. It is practically useful for finding files and directories taking up large amounts of disk space
+
+- When executed without any option du displays the disk usage of the given file or directory and each of its subdirectories in bytes.
+
+        du ~/Documents
+
+- use arguments like ``-h`` to print sizes in human readable format (e.g., 1K 234M 2G), ``-s``, ``--summarize`` display only a total for each argument
+
+        du -sh learn-bash
+  
 # text-commands
 - Sort: sort a file (assuming the contents are ASCII)
 
