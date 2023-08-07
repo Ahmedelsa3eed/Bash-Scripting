@@ -22,6 +22,7 @@
 - [mysql](#mysql)
 - [ssh](#ssh)
 - [notes](#notes)
+- [siege - An HTTP/HTTPS stress tester](#siege)
 
 # Bash Scipting Intro
 
@@ -556,3 +557,14 @@ To handle filenames that begin with a dash in Linux, you can use one of the foll
         $ rm ./-samplefile.txt
 
 ---
+
+# siege
+An HTTP/HTTPS stress tester
+
+
+        siege -t 155 -c 15 -i http://homer.whoohoo.com/index.html
+
+options:
+- ``-t``: allows you to run the test for a selected period of time.
+- ``-c``: allows you to set the concurrent number of simulated users.
+- ``-i``: generates user simulation by randomly hitting the URLs read from the urls.txt file.
