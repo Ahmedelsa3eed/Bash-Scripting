@@ -19,6 +19,7 @@
     - [scp](#scp)
     - [du](#du)
     - [cut](#cut)
+    - [tar](#tar)
 - [Text manipulation tools](#text-commands)
 - [mysql](#mysql)
 - [ssh](#ssh)
@@ -441,6 +442,14 @@ You can use any single character as a delimiter. In the following example, we ar
 output
 
     ipsum
+
+# tar
+Extract to current directory
+To extract an archive into the current working directory, use the “-x” option as shown below.
+
+    tar -xvf documents.tar.gz
+    
+In this example, we are unzipping or extracting the “documents.tar.gz” file, which contains three text files.
 
 # text-commands
 - Sort: sort a file (assuming the contents are ASCII)
