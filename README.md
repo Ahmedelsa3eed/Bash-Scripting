@@ -18,6 +18,7 @@
     - [systemctl](#systemctl)
     - [scp](#scp)
     - [du](#du)
+    - [cut](#cut)
 - [Text manipulation tools](#text-commands)
 - [mysql](#mysql)
 - [ssh](#ssh)
@@ -412,7 +413,35 @@ The ``du`` command, short for “disk usage” reports the estimated amount of d
 - use arguments like ``-h`` to print sizes in human readable format (e.g., 1K 234M 2G), ``-s``, ``--summarize`` display only a total for each argument
 
         du -sh learn-bash
-  
+
+# cut
+``cut`` is a command-line utility that allows you to cut parts of lines from specified files or piped data and print the result to standard output. It can be used to cut parts of a line by delimiter, byte position, and character.
+
+## How to Cut by Field
+To specify the fields that should be cut invoke the command with the -f option. When not specified, the default delimiter is “TAB”.
+
+In the examples below, we will use the following file. The fields are separated by tabs.
+
+    245:789 4567    M:4540  Admin   01:10:1980
+    535:763 4987    M:3476  Sales   11:04:1978
+
+For example, to display the 1st and the 3rd field you would use:
+
+    cut test.txt -f 1,3
+
+output
+
+    245:789	M:4540
+    535:763	M:3476
+
+You can use any single character as a delimiter. In the following example, we are using the space character as a delimiter and printing the 2nd field:
+    
+    echo "Lorem ipsum dolor sit amet" | cut -d ' ' -f 2
+
+output
+
+    ipsum
+
 # text-commands
 - Sort: sort a file (assuming the contents are ASCII)
 
