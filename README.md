@@ -618,8 +618,7 @@ trace system calls and signals
 
         strace ./a.out
 
-  ## redare2
-  radare2 is a command-line hexadecimal editor.
-
+## redare2
+radare2 is a command-line hexadecimal editor.
 
         redare2 -d ./a.out
