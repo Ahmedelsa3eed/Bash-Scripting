@@ -25,6 +25,9 @@
 - [ssh](#ssh)
 - [notes](#notes)
 - [siege - An HTTP/HTTPS stress tester](#siege)
+- [debug](#debug)
+    - [strace](#strace)
+    - [redare2](#redare2)
 
 # Bash Scipting Intro
 
@@ -606,3 +609,17 @@ options:
 - ``-t``: allows you to run the test for a selected period of time.
 - ``-c``: allows you to set the concurrent number of simulated users.
 - ``-i``: generates user simulation by randomly hitting the URLs read from the urls.txt file.
+
+
+# debug
+## strace
+trace system calls and signals
+- It intercepts and records the system calls which are called by a process and the signals which are received by a process.  The name of each system call, its arguments and its return value are printed on standard error or to the file specified with the -o option.
+
+        strace ./a.out
+
+  ## redare2
+  radare2 is a command-line hexadecimal editor.
+
+
+        redare2 -d ./a.out
